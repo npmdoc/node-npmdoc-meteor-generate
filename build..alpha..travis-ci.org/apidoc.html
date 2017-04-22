@@ -1,0 +1,1018 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >meteor-generate (v0.12.2)</a>
+</h1>
+<h4>Generate Meteor scaffolding on demand</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-generate">module meteor-generate</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-generate.</span>controller</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-generate.</span>init</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-generate.</span>page</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-generate.</span>router</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-generate.controller">module meteor-generate.controller</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.controller._appendController">
+            function <span class="apidocSignatureSpan">meteor-generate.controller.</span>_appendController
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.controller._createBaseController">
+            function <span class="apidocSignatureSpan">meteor-generate.controller.</span>_createBaseController
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.controller.init">
+            function <span class="apidocSignatureSpan">meteor-generate.controller.</span>init
+            <span class="apidocSignatureSpan">(resName, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.controller.</span>contrTemplates</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.controller.</span>controllerPath</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-generate.init">module meteor-generate.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init.init">
+            function <span class="apidocSignatureSpan">meteor-generate.</span>init
+            <span class="apidocSignatureSpan">(projectName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init._addPackagesToPackagesFile">
+            function <span class="apidocSignatureSpan">meteor-generate.init.</span>_addPackagesToPackagesFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init._copyTemplate">
+            function <span class="apidocSignatureSpan">meteor-generate.init.</span>_copyTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init._removeOriginalMeteorFiles">
+            function <span class="apidocSignatureSpan">meteor-generate.init.</span>_removeOriginalMeteorFiles
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init._removePackage">
+            function <span class="apidocSignatureSpan">meteor-generate.init.</span>_removePackage
+            <span class="apidocSignatureSpan">(packageName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init._removeUnwantedPackages">
+            function <span class="apidocSignatureSpan">meteor-generate.init.</span>_removeUnwantedPackages
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.init._runTerminalCommand">
+            function <span class="apidocSignatureSpan">meteor-generate.init.</span>_runTerminalCommand
+            <span class="apidocSignatureSpan">(command, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.init.</span>initSource</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-generate.page">module meteor-generate.page</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.page.run">
+            function <span class="apidocSignatureSpan">meteor-generate.page.</span>run
+            <span class="apidocSignatureSpan">(pageName, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-generate.router">module meteor-generate.router</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.router.appendRoute">
+            function <span class="apidocSignatureSpan">meteor-generate.router.</span>appendRoute
+            <span class="apidocSignatureSpan">(resName, action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-generate.router.create">
+            function <span class="apidocSignatureSpan">meteor-generate.router.</span>create
+            <span class="apidocSignatureSpan">(projPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-generate.router.</span>beforeEndOfRouter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.router.</span>destRoot</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.router.</span>routeDest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.router.</span>routeSrc</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">meteor-generate.router.</span>terminateRoute</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-generate" id="apidoc.module.meteor-generate">module meteor-generate</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-generate.controller" id="apidoc.module.meteor-generate.controller">module meteor-generate.controller</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.controller._appendController" id="apidoc.element.meteor-generate.controller._appendController">
+        function <span class="apidocSignatureSpan">meteor-generate.controller.</span>_appendController
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_appendController = function (action) {
+  var templateStr = fs.readFileSync(this.contrTemplates + action + &#x27;.js&#x27;,
+                               {encoding: &#x27;utf-8&#x27;});
+
+  // rename template variables and append to controller file
+  templateStr = require(&#x27;./rename&#x27;)(this.resName, templateStr);
+  fs.appendFileSync(this.contrFile, templateStr);
+
+  // add a route for new controller
+  if (action !== &#x27;create&#x27; &#x26;&#x26; action !== &#x27;update&#x27; &#x26;&#x26; action !== &#x27;destroy&#x27;) {
+    require(&#x27;./router&#x27;).appendRoute(this.resName, action);
+    console.log(&#x27;    Added Route: &#x27; + this.resName + &#x22; &#x22; + action);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!fs.existsSync(this.contrFile)) {
+  console.log(&#x27;    Created: &#x27; + this.contrFile);
+}
+
+// Append Iron Router Controllers
+
+if (opts.index || opts.all) {
+  this.<span class="apidocCodeKeywordSpan">_appendController</span>(&#x27;index&#x27;);
+  require(&#x27;./page&#x27;).run(this.resName, {index: true});
+}
+
+if (opts.new || opts.all) {
+  this._appendController(&#x27;new&#x27;);
+  require(&#x27;./page&#x27;).run(resName, {&#x27;new&#x27;: true});
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.controller._createBaseController" id="apidoc.element.meteor-generate.controller._createBaseController">
+        function <span class="apidocSignatureSpan">meteor-generate.controller.</span>_createBaseController
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createBaseController = function () {
+  if (fs.existsSync(this.controllerPath + &#x27;_app.js&#x27;)) return;
+
+  fs.copySync(this.contrTemplates+&#x27;_app.js&#x27;, this.controllerPath+&#x27;_app.js&#x27;);
+  console.log(&#x27;    Created: &#x27;+ this.controllerPath +&#x27;_app.js&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// if no args passed in, created all routes
+if (!opts.index &#x26;&#x26; !opts.new &#x26;&#x26; !opts.show &#x26;&#x26; !opts.edit &#x26;&#x26;
+    !opts.create &#x26;&#x26; !opts.update &#x26;&#x26; !opts.destroy) {
+  this.opts.all = true;
+}
+
+this.<span class="apidocCodeKeywordSpan">_createBaseController</span>();
+
+// add a comment line before adding new routes
+require(&#x27;./router&#x27;).appendRoute(resName, &#x27;comment_line&#x27;);
+
+// print &#x27;created&#x27; if file doesn&#x27;t exist yet (created on first append)
+if (!fs.existsSync(this.contrFile)) {
+  console.log(&#x27;    Created: &#x27; + this.contrFile);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.controller.init" id="apidoc.element.meteor-generate.controller.init">
+        function <span class="apidocSignatureSpan">meteor-generate.controller.</span>init
+        <span class="apidocSignatureSpan">(resName, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (resName, opts) {
+
+  // TODO ensure resName is always snake case
+  this.contrFile = this.controllerPath + resName + &#x27;.js&#x27;;
+  this.resName = resName;
+  this.opts = opts;
+
+  // if no args passed in, created all routes
+  if (!opts.index &#x26;&#x26; !opts.new &#x26;&#x26; !opts.show &#x26;&#x26; !opts.edit &#x26;&#x26;
+      !opts.create &#x26;&#x26; !opts.update &#x26;&#x26; !opts.destroy) {
+    this.opts.all = true;
+  }
+
+  this._createBaseController();
+
+  // add a comment line before adding new routes
+  require(&#x27;./router&#x27;).appendRoute(resName, &#x27;comment_line&#x27;);
+
+  // print &#x27;created&#x27; if file doesn&#x27;t exist yet (created on first append)
+  if (!fs.existsSync(this.contrFile)) {
+    console.log(&#x27;    Created: &#x27; + this.contrFile);
+  }
+
+  // Append Iron Router Controllers
+
+  if (opts.index || opts.all) {
+    this._appendController(&#x27;index&#x27;);
+    require(&#x27;./page&#x27;).run(this.resName, {index: true});
+  }
+
+  if (opts.new || opts.all) {
+    this._appendController(&#x27;new&#x27;);
+    require(&#x27;./page&#x27;).run(resName, {&#x27;new&#x27;: true});
+  }
+
+  if (opts.show || opts.all) {
+    this._appendController(&#x27;show&#x27;);
+    require(&#x27;./page&#x27;).run(resName, {show: true});
+  }
+
+  if (opts.edit || opts.all) {
+    this._appendController(&#x27;edit&#x27;);
+    require(&#x27;./page&#x27;).run(resName, {edit: true});
+  }
+
+  // Append data Controllers
+
+  if (opts.create || opts.all) {
+    this._appendController(&#x27;create&#x27;);
+  }
+
+  if (opts.update || opts.all) {
+    this._appendController(&#x27;update&#x27;);
+  }
+
+  if (opts.destroy || opts.all) {
+    this._appendController(&#x27;destroy&#x27;);
+  }
+
+  // add blank line to routes.js after controller routes
+  require(&#x27;./router&#x27;).appendRoute(null, &#x27;blank_line&#x27;);
+
+  // instantiate and add namespace for this resource if needed
+  new (require(&#x27;./namespace&#x27;))().add(resName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+initSource: templatePath + &#x27;init/&#x27;,
+
+// Public: Copy the boilerplate in the templates init folder to
+// the user&#x27;s root project folder. Creates a router and client
+// folder. The project name is used for removing original boilerplate.
+//
+// Examples:
+// require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(&#x27;myProjectName&#x27;);
+//
+// projectName - the {String} name of the user&#x27;s meteor project
+//
+init: function(projectName) {
+  var self = this;
+  this.projectName = projectName;
+  this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-generate.init" id="apidoc.module.meteor-generate.init">module meteor-generate.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init.init" id="apidoc.element.meteor-generate.init.init">
+        function <span class="apidocSignatureSpan">meteor-generate.</span>init
+        <span class="apidocSignatureSpan">(projectName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (projectName) {
+  var self = this;
+  this.projectName = projectName;
+  this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+  this.packages = this.projDir + &#x27;.meteor/packages&#x27;;
+
+  this._runTerminalCommand(&#x27;meteor create &#x27;+ projectName, function() {
+    // after command is finished
+    router.create(self.projDir);
+    self._copyTemplate();
+    self._removeOriginalMeteorFiles(projectName);
+    self._removeUnwantedPackages();
+    self._addPackagesToPackagesFile();
+
+    puts(&#x27;\n-------------------------------------------&#x27;);
+    puts(&#x27;  type cd %s to navigate to project&#x27;, projectName);
+    puts(&#x27;  then the meteor command to start a server&#x27;);
+    puts(&#x27;-------------------------------------------\n&#x27;);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+initSource: templatePath + &#x27;init/&#x27;,
+
+// Public: Copy the boilerplate in the templates init folder to
+// the user&#x27;s root project folder. Creates a router and client
+// folder. The project name is used for removing original boilerplate.
+//
+// Examples:
+// require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(&#x27;myProjectName&#x27;);
+//
+// projectName - the {String} name of the user&#x27;s meteor project
+//
+init: function(projectName) {
+  var self = this;
+  this.projectName = projectName;
+  this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init._addPackagesToPackagesFile" id="apidoc.element.meteor-generate.init._addPackagesToPackagesFile">
+        function <span class="apidocSignatureSpan">meteor-generate.init.</span>_addPackagesToPackagesFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addPackagesToPackagesFile = function () {
+  fs.appendFileSync(this.projDir + &#x27;.meteor/packages&#x27;, &#x27;iron:router\n&#x27;);
+  puts(&#x22;    Added Package: iron:router&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this._runTerminalCommand(&#x27;meteor create &#x27;+ projectName, function() {
+    // after command is finished
+    router.create(self.projDir);
+    self._copyTemplate();
+    self._removeOriginalMeteorFiles(projectName);
+    self._removeUnwantedPackages();
+    self.<span class="apidocCodeKeywordSpan">_addPackagesToPackagesFile</span>();
+
+    puts(&#x27;\n-------------------------------------------&#x27;);
+    puts(&#x27;  type cd %s to navigate to project&#x27;, projectName);
+    puts(&#x27;  then the meteor command to start a server&#x27;);
+    puts(&#x27;-------------------------------------------\n&#x27;);
+  });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init._copyTemplate" id="apidoc.element.meteor-generate.init._copyTemplate">
+        function <span class="apidocSignatureSpan">meteor-generate.init.</span>_copyTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_copyTemplate = function () {
+  fs.copySync(this.initSource, this.projDir);
+  fs.removeSync(this.projDir + &#x27;client/.gitkeep&#x27;);
+  fs.removeSync(this.projDir + &#x27;server/.gitkeep&#x27;);
+
+  puts(&#x27;    Created: .jshintrc&#x27;);
+  puts(&#x27;    Created: .jshintignore&#x27;);
+  puts(&#x27;    Created: makefile&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.projectName = projectName;
+    this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+    this.packages = this.projDir + &#x27;.meteor/packages&#x27;;
+
+    this._runTerminalCommand(&#x27;meteor create &#x27;+ projectName, function() {
+// after command is finished
+router.create(self.projDir);
+self.<span class="apidocCodeKeywordSpan">_copyTemplate</span>();
+self._removeOriginalMeteorFiles(projectName);
+self._removeUnwantedPackages();
+self._addPackagesToPackagesFile();
+
+puts(&#x27;\n-------------------------------------------&#x27;);
+puts(&#x27;  type cd %s to navigate to project&#x27;, projectName);
+puts(&#x27;  then the meteor command to start a server&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init._removeOriginalMeteorFiles" id="apidoc.element.meteor-generate.init._removeOriginalMeteorFiles">
+        function <span class="apidocSignatureSpan">meteor-generate.init.</span>_removeOriginalMeteorFiles
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeOriginalMeteorFiles = function () {
+  fs.removeSync(this.projDir + this.projectName + &#x27;.js&#x27;);
+  fs.removeSync(this.projDir + this.projectName + &#x27;.html&#x27;);
+  fs.removeSync(this.projDir + this.projectName + &#x27;.css&#x27;);
+  puts(&#x27;    Removed: original boilerplate&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+    this.packages = this.projDir + &#x27;.meteor/packages&#x27;;
+
+    this._runTerminalCommand(&#x27;meteor create &#x27;+ projectName, function() {
+// after command is finished
+router.create(self.projDir);
+self._copyTemplate();
+self.<span class="apidocCodeKeywordSpan">_removeOriginalMeteorFiles</span>(projectName);
+self._removeUnwantedPackages();
+self._addPackagesToPackagesFile();
+
+puts(&#x27;\n-------------------------------------------&#x27;);
+puts(&#x27;  type cd %s to navigate to project&#x27;, projectName);
+puts(&#x27;  then the meteor command to start a server&#x27;);
+puts(&#x27;-------------------------------------------\n&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init._removePackage" id="apidoc.element.meteor-generate.init._removePackage">
+        function <span class="apidocSignatureSpan">meteor-generate.init.</span>_removePackage
+        <span class="apidocSignatureSpan">(packageName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removePackage = function (packageName) {
+  var oldPackages, newPackages;
+
+  oldPackages = fs.readFileSync(this.packages, {encoding: &#x27;utf-8&#x27;});
+  newPackages = oldPackages.replace(packageName + &#x27;\n&#x27;, &#x27;&#x27;);
+  fs.writeFileSync(this.packages, newPackages);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  puts(&#x27;    Removed: original boilerplate&#x27;);
+},
+
+
+// Private: Removes packages that are not wanted for a production app
+//
+_removeUnwantedPackages: function() {
+  this.<span class="apidocCodeKeywordSpan">_removePackage</span>(&#x27;insecure&#x27;);
+  this._removePackage(&#x27;autopublish&#x27;);
+  puts(&#x22;Updating Packages&#x22;);
+  puts(&#x22;    Removed Package: insecure&#x22;);
+  puts(&#x22;    Removed Package: autopublish&#x22;);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init._removeUnwantedPackages" id="apidoc.element.meteor-generate.init._removeUnwantedPackages">
+        function <span class="apidocSignatureSpan">meteor-generate.init.</span>_removeUnwantedPackages
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeUnwantedPackages = function () {
+  this._removePackage(&#x27;insecure&#x27;);
+  this._removePackage(&#x27;autopublish&#x27;);
+  puts(&#x22;Updating Packages&#x22;);
+  puts(&#x22;    Removed Package: insecure&#x22;);
+  puts(&#x22;    Removed Package: autopublish&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.packages = this.projDir + &#x27;.meteor/packages&#x27;;
+
+this._runTerminalCommand(&#x27;meteor create &#x27;+ projectName, function() {
+  // after command is finished
+  router.create(self.projDir);
+  self._copyTemplate();
+  self._removeOriginalMeteorFiles(projectName);
+  self.<span class="apidocCodeKeywordSpan">_removeUnwantedPackages</span>();
+  self._addPackagesToPackagesFile();
+
+  puts(&#x27;\n-------------------------------------------&#x27;);
+  puts(&#x27;  type cd %s to navigate to project&#x27;, projectName);
+  puts(&#x27;  then the meteor command to start a server&#x27;);
+  puts(&#x27;-------------------------------------------\n&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.init._runTerminalCommand" id="apidoc.element.meteor-generate.init._runTerminalCommand">
+        function <span class="apidocSignatureSpan">meteor-generate.init.</span>_runTerminalCommand
+        <span class="apidocSignatureSpan">(command, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_runTerminalCommand = function (command, callback) {
+  var exec = require(&#x27;child_process&#x27;).exec;
+
+  exec(command, function (err) {
+    if (err) puts(&#x27;exec error: &#x27; + err);
+    callback.call(this);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  //
+  init: function(projectName) {
+var self = this;
+this.projectName = projectName;
+this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+this.packages = this.projDir + &#x27;.meteor/packages&#x27;;
+
+this.<span class="apidocCodeKeywordSpan">_runTerminalCommand</span>(&#x27;meteor create &#x27;+ projectName, function() {
+  // after command is finished
+  router.create(self.projDir);
+  self._copyTemplate();
+  self._removeOriginalMeteorFiles(projectName);
+  self._removeUnwantedPackages();
+  self._addPackagesToPackagesFile();
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-generate.page" id="apidoc.module.meteor-generate.page">module meteor-generate.page</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.page.run" id="apidoc.element.meteor-generate.page.run">
+        function <span class="apidocSignatureSpan">meteor-generate.page.</span>run
+        <span class="apidocSignatureSpan">(pageName, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (pageName, opts) {
+  var nameCase, destPath;
+
+  nameCase = {
+    snake:  pageName,
+    camel:  changeCase.camelCase(pageName),
+    hyphen: changeCase.paramCase(pageName)
+  };
+
+
+  // set destination, e.g. client/pages/posts/
+  opts.directory = opts.directory || &#x27;client/pages/&#x27;;
+  destPath = opts.directory + pageName + &#x27;/&#x27;;
+
+
+  // create a directory in components folder
+  fs.mkdirs(destPath, function (err) {
+    var importStr;
+
+    if (err) {
+      console.error(&#x27;\nError creating directory&#x27;, pageName);
+      console.error(err);
+    } else {
+      copyTemplates();
+    }
+  });
+
+
+  var templatePath = pageTemplates;
+  var pagePath     = destPath;
+
+
+  function copyTemplates() {
+    // if no action flags are passed, scaffold everything
+    if (!opts.index &#x26;&#x26; !opts.new &#x26;&#x26; !opts.show &#x26;&#x26; !opts.edit) {
+      opts.index = true;
+      opts.new = true;
+      opts.show = true;
+      opts.edit = true;
+    }
+
+    if (opts.index) {
+      copyFile({ from: templatePath, to: pagePath, pageName: pageName,
+        filename: &#x27;index&#x27;, ext: [&#x27;.html&#x27;, &#x27;.js&#x27;, &#x27;.scss&#x27;],
+        replaceWith: pageName
+      });
+    }
+
+    if (opts.new) {
+      copyFile({ from: templatePath, to: pagePath, pageName: pageName,
+        filename: &#x27;new&#x27;, ext: [&#x27;.html&#x27;, &#x27;.js&#x27;, &#x27;.scss&#x27;],
+        replaceWith: pageName + &#x27;New&#x27;
+      });
+    }
+
+    if (opts.show) {
+      copyFile({ from: templatePath, to: pagePath, pageName: pageName,
+        filename: &#x27;show&#x27;, ext: [&#x27;.html&#x27;, &#x27;.js&#x27;, &#x27;.scss&#x27;],
+        replaceWith: pageName + &#x27;Show&#x27;
+      });
+    }
+
+    if (opts.edit) {
+      copyFile({ from: templatePath, to: pagePath, pageName: pageName,
+        filename: &#x27;edit&#x27;, ext: [&#x27;.html&#x27;, &#x27;.js&#x27;, &#x27;.scss&#x27;],
+        replaceWith: pageName + &#x27;Edit&#x27;
+      });
+    }
+  }
+
+
+  // Refactor into module ------------------------------------------
+  function copyFile(opts) {
+    var importStr, ext;
+
+    if (!opts) return console.log(&#x27;incomplete options&#x27;);
+    ext = opts.ext;
+    if (typeof ext === &#x27;string&#x27;) {
+      ext = [ext]; // turn string ext into array
+    }
+
+    // itterate through each file and process it
+    ext.forEach(function(extension) {
+      var filename;
+
+      filename = opts.filename;
+
+      // handle sass paritals by prepending underscore
+      if (extension === &#x27;.scss&#x27;) {
+        importStr = &#x22;@import &#x27;../pages/&#x22; + opts.pageName + &#x22;/&#x22; + filename + &#x22;&#x27;;\n&#x22;
+        fs.appendFileSync(&#x27;client/styles/_pages.scss&#x27;, importStr)
+        filename = &#x22;_&#x22; + filename;
+      }
+
+      // copy from default folder to destination folder and rename any
+      // variables that may be in each file
+      fs.copy(opts.from + filename + extension,
+              opts.to   + filename + extension, function (err) {
+
+        handleError(err);
+
+        replace(opts.to + filename + extension, function(data) {
+          var res, repl;
+          if (opts.replaceWith) {
+            repl = opts.replaceWith;
+            res = data.replace(/compName/g, changeCase.camelCase(repl));
+            return res.replace(/comp-name/g, changeCase.paramCase(repl));
+          } else {
+            res = data.replace(/compName/g, nameCase.camel);
+            return res.replace(/comp-name/g, nameCase.hyphen);
+          }
+        });
+
+        console.log(&#x27;    Created:&#x27;, opts.to+opts.filename+extension);
+      });
+
+    });
+
+  }
+
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log(&#x27;    Created: &#x27; + this.contrFile);
+}
+
+// Append Iron Router Controllers
+
+if (opts.index || opts.all) {
+  this._appendController(&#x27;index&#x27;);
+  require(&#x27;./page&#x27;).<span class="apidocCodeKeywordSpan">run</span>(this.resName, {index: true});
+}
+
+if (opts.new || opts.all) {
+  this._appendController(&#x27;new&#x27;);
+  require(&#x27;./page&#x27;).run(resName, {&#x27;new&#x27;: true});
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-generate.router" id="apidoc.module.meteor-generate.router">module meteor-generate.router</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.router.appendRoute" id="apidoc.element.meteor-generate.router.appendRoute">
+        function <span class="apidocSignatureSpan">meteor-generate.router.</span>appendRoute
+        <span class="apidocSignatureSpan">(resName, action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">appendRoute = function (resName, action) {
+  var route, newContent, oldFileStr, newFileStr, res;
+  resName = resName || &#x27;&#x27;;
+
+  res = require(&#x27;./parse_name&#x27;)(resName)
+
+  // set correct route for the required action
+  // TODO Pascal case namespaces, camelcase routes
+  switch (action) {
+    case &#x27;index&#x27;:
+      route = &#x22;  this.route(&#x27;&#x22; + res.camelPlural + &#x22;&#x27;,     { path: &#x27;/&#x22;+resName+&#x22;&#x27;,          controller: &#x22;+res.pascalPlural+&#x22;Controller
+.Index });&#x22;;
+      break;
+    case &#x27;new&#x27;:
+      route = &#x22;  this.route(&#x27;&#x22; + res.camelPlural + &#x22;New&#x27;,  { path: &#x27;/&#x22;+resName+&#x22;/new&#x27;,      controller: &#x22;+res.pascalPlural+&#x22;Controller
+.New });&#x22;;
+      break;
+    case &#x27;show&#x27;:
+      route = &#x22;  this.route(&#x27;&#x22; + res.camelPlural + &#x22;Show&#x27;, { path: &#x27;/&#x22;+resName+&#x22;/:id&#x27;,      controller: &#x22;+res.pascalPlural+&#x22;Controller
+.Show });&#x22;;
+      break;
+    case &#x27;edit&#x27;:
+      route = &#x22;  this.route(&#x27;&#x22; + res.camelPlural + &#x22;Edit&#x27;, { path: &#x27;/&#x22;+resName+&#x22;/edit/:id&#x27;, controller: &#x22;+res.pascalPlural+&#x22;Controller
+.Edit });&#x22;;
+      break;
+    case &#x27;comment_line&#x27;:
+      route = &#x22;  // &#x22; + resName + &#x22; routes&#x22;;
+      break;
+    case &#x27;blank_line&#x27;:
+      route = &#x22;&#x22;;
+      break;
+    default:
+      route = &#x22;  this.route(&#x27;UNKNOWN&#x27;, { path: &#x27;/&#x27;, controller: UNKNOWN.index });&#x22;;
+      break;
+  }
+
+  // read routes.js from users folder and save to string
+  // concat new route together
+  oldFileStr = fs.readFileSync(this.routeDest, {encoding: &#x27;utf-8&#x27;});
+  newContent = route + &#x22;\n&#x22; + this.terminateRoute;
+
+  // insert new content into current routes.js string
+  // write new content to file `routes/controllers/resource_name.js`
+  newFileStr = oldFileStr.replace(this.beforeEndOfRouter, newContent);
+  fs.writeFileSync(this.routeDest, newFileStr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    !opts.create &#x26;&#x26; !opts.update &#x26;&#x26; !opts.destroy) {
+  this.opts.all = true;
+}
+
+this._createBaseController();
+
+// add a comment line before adding new routes
+require(&#x27;./router&#x27;).<span class="apidocCodeKeywordSpan">appendRoute</span>(resName, &#x27;comment_line&#x27;);
+
+// print &#x27;created&#x27; if file doesn&#x27;t exist yet (created on first append)
+if (!fs.existsSync(this.contrFile)) {
+  console.log(&#x27;    Created: &#x27; + this.contrFile);
+}
+
+// Append Iron Router Controllers
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-generate.router.create" id="apidoc.element.meteor-generate.router.create">
+        function <span class="apidocSignatureSpan">meteor-generate.router.</span>create
+        <span class="apidocSignatureSpan">(projPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (projPath) {
+  // handle calling create outside of project and inside
+  var rootPath = (projPath) ? projPath : &#x27;./&#x27;;
+
+  // create both folder if it doesn&#x27;t already exisit
+  fs.mkdirsSync(rootPath);
+
+  // bail if router already exists
+  if (fs.existsSync(rootPath + &#x27;both/routes.js&#x27;)) return;
+
+  // copy router.js from templates/ to project/both/controllers
+  fs.copySync(this.routeSrc, rootPath + &#x27;both/routes.js&#x27;);
+  console.log(&#x27;    Created: both/routes.js&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            ├── index.html
+            ├── index.js
+            └── _index.scss
+```
+
+
+### Controllers
+`mgen controller &#x3c;name&#x3e; &#x3c;actions&#x3e;` Creates controllers for Iron-Router, adds routes, creates pages for controllers
+. If only `create`, `update`, or `destroy` actions are passed, no pages are created. These are data only controllers. A namespace
+ file is created if it doesn&#x27;t exist which adds a `db` namespace for collections. This allows for a natural `db.posts.find(...)`
+synatax. Creating a posts controller adds a `PostsController` namespace. For example, `PostsController.<span class="apidocCodeKeywordSpan
+">create</span>()` Possible actions: index, new, show, edit, create, update, and destroy. If no actions are passed, all will be
+created.
+See [Example Controller][4]  - `mgen controller posts --show` generates the following:
+
+```
+├── both
+│   ├── controllers
+│   │   ├── _app.js
+│   │   └── posts.js
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
