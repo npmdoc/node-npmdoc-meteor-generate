@@ -1,6 +1,6 @@
 # npmdoc-meteor-generate
 
-#### api documentation for  meteor-generate (v0.12.2)  [![npm package](https://img.shields.io/npm/v/npmdoc-meteor-generate.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-meteor-generate) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-meteor-generate.svg)](https://travis-ci.org/npmdoc/node-npmdoc-meteor-generate)
+#### basic api documentation for  [meteor-generate (v0.12.2)](https://github.com/AdamBrodzinski/meteor-generate)  [![npm package](https://img.shields.io/npm/v/npmdoc-meteor-generate.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-meteor-generate) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-meteor-generate.svg)](https://travis-ci.org/npmdoc/node-npmdoc-meteor-generate)
 
 #### Generate Meteor scaffolding on demand
 
@@ -21,36 +21,54 @@
 ```json
 
 {
-    "name": "meteor-generate",
-    "version": "0.12.2",
-    "description": "Generate Meteor scaffolding on demand",
-    "keywords": [
-        "meteor",
-        "scaffold"
-    ],
-    "author": "Adam Brodzinski",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/AdamBrodzinski/meteor-generate.git"
+    "author": {
+        "name": "Adam Brodzinski"
     },
     "bin": {
         "mgen": "./bin/mgen"
     },
+    "bugs": {
+        "url": "https://github.com/AdamBrodzinski/meteor-generate/issues"
+    },
     "dependencies": {
+        "change-case": "*",
         "coffee-script": "*",
         "commander": "*",
-        "change-case": "*",
         "fs-extra": "0.13.0",
         "pluralize": "*"
     },
+    "description": "Generate Meteor scaffolding on demand",
     "devDependencies": {
-        "mocha": "*",
-        "chai": "*"
+        "chai": "*",
+        "mocha": "*"
+    },
+    "directories": {},
+    "dist": {
+        "shasum": "caf92946e51f23244890e52ef8c5b929abf8cd6d",
+        "tarball": "https://registry.npmjs.org/meteor-generate/-/meteor-generate-0.12.2.tgz"
+    },
+    "gitHead": "108705130e3cc507ac47324ac0804bbebd1c1032",
+    "homepage": "https://github.com/AdamBrodzinski/meteor-generate",
+    "keywords": [
+        "meteor",
+        "scaffold"
+    ],
+    "license": "MIT",
+    "maintainers": [
+        {
+            "name": "adambrodzinski"
+        }
+    ],
+    "name": "meteor-generate",
+    "optionalDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AdamBrodzinski/meteor-generate.git"
     },
     "scripts": {
         "test": "make test"
-    }
+    },
+    "version": "0.12.2"
 }
 ```
 
