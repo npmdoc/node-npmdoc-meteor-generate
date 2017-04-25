@@ -47,7 +47,7 @@
 }
 </style>
 <h1>api documentation for
-    <a>meteor-generate (v0.12.2)</a>
+    <a href="https://github.com/AdamBrodzinski/meteor-generate">meteor-generate (v0.12.2)</a>
 </h1>
 <h4>Generate Meteor scaffolding on demand</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
@@ -429,21 +429,21 @@ if (!fs.existsSync(this.contrFile)) {
   new (require('./namespace'))().add(resName);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-initSource: templatePath + 'init/',
 
-// Public: Copy the boilerplate in the templates init folder to
-// the user's root project folder. Creates a router and client
-// folder. The project name is used for removing original boilerplate.
-//
-// Examples:
-// require('./init').<span class="apidocCodeKeywordSpan">init</span>('myProjectName');
-//
-// projectName - the {String} name of the user's meteor project
-//
-init: function(projectName) {
-  var self = this;
-  this.projectName = projectName;
-  this.projDir = './' + projectName + '/';
+# Create Command
+prog.command('create &lt;projectName&gt;')
+.description('Create a basic running app with a router.')
+
+.action((projectName, options) -&gt;
+  puts('\nCreating basic app structure')
+  require('./init').<span class="apidocCodeKeywordSpan">init</span>(projectName, options)
+)
+
+.on('--help', -&gt;
+  puts 'Scaffold out common files like .jshintrc, smart.json, and a makefile'
+  puts ''
+  puts '  Example:'
+  puts '  $ mgen create mybook'
 ...</pre></li>
     </ul>
 
@@ -486,21 +486,21 @@ init: function(projectName) {
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-initSource: templatePath + 'init/',
 
-// Public: Copy the boilerplate in the templates init folder to
-// the user's root project folder. Creates a router and client
-// folder. The project name is used for removing original boilerplate.
-//
-// Examples:
-// require('./init').<span class="apidocCodeKeywordSpan">init</span>('myProjectName');
-//
-// projectName - the {String} name of the user's meteor project
-//
-init: function(projectName) {
-  var self = this;
-  this.projectName = projectName;
-  this.projDir = './' + projectName + '/';
+# Create Command
+prog.command('create &lt;projectName&gt;')
+.description('Create a basic running app with a router.')
+
+.action((projectName, options) -&gt;
+  puts('\nCreating basic app structure')
+  require('./init').<span class="apidocCodeKeywordSpan">init</span>(projectName, options)
+)
+
+.on('--help', -&gt;
+  puts 'Scaffold out common files like .jshintrc, smart.json, and a makefile'
+  puts ''
+  puts '  Example:'
+  puts '  $ mgen create mybook'
 ...</pre></li>
     </ul>
 
@@ -849,20 +849,22 @@ this.<span class="apidocCodeKeywordSpan">_runTerminalCommand</span>('meteor crea
 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  console.log('    Created: ' + this.contrFile);
-}
+.option("-d, --directory &lt;path&gt;", "Change the default component directory 'client/pages'"
+;, "client/pages/")
+.option("-i, --index", "Only create an 'index' page")
+.option("-s, --show",  "Only create a 'show' page")
+.option("-n, --new",   "Only create a 'new' page")
+.option("-e, --edit",  "Only create an 'edit' page")
 
-// Append Iron Router Controllers
+.action((pageName, options) -&gt;
+  require('./page').<span class="apidocCodeKeywordSpan">run</span>(pageName, options)
+  puts('Creating Pages')
+)
 
-if (opts.index || opts.all) {
-  this._appendController('index');
-  require('./page').<span class="apidocCodeKeywordSpan">run</span>(this.resName, {index: true});
-}
-
-if (opts.new || opts.all) {
-  this._appendController('new');
-  require('./page').run(resName, {'new': true});
-}
+.on('--help', -&gt;
+  puts '  Create a page boilerplate folder including a HTML template, JS, &amp; Sass file.'
+  puts "  By default all crud actions will be generated, e.g., new.js, show.js, edit.js, index.js"
+  puts "  Pass --show flag to only generate show.js, show.html, etc.."
 ...</pre></li>
     </ul>
 

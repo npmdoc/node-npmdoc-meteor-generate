@@ -49,6 +49,8 @@
 <h1>api documentation for
     <a
 
+        href="https://github.com/AdamBrodzinski/meteor-generate"
+
     >meteor-generate (v0.12.2)</a>
 </h1>
 <h4>Generate Meteor scaffolding on demand</h4>
@@ -434,21 +436,21 @@ if (!fs.existsSync(this.contrFile)) {
   new (require(&#x27;./namespace&#x27;))().add(resName);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-initSource: templatePath + &#x27;init/&#x27;,
 
-// Public: Copy the boilerplate in the templates init folder to
-// the user&#x27;s root project folder. Creates a router and client
-// folder. The project name is used for removing original boilerplate.
-//
-// Examples:
-// require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(&#x27;myProjectName&#x27;);
-//
-// projectName - the {String} name of the user&#x27;s meteor project
-//
-init: function(projectName) {
-  var self = this;
-  this.projectName = projectName;
-  this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+# Create Command
+prog.command(&#x27;create &#x3c;projectName&#x3e;&#x27;)
+.description(&#x27;Create a basic running app with a router.&#x27;)
+
+.action((projectName, options) -&#x3e;
+  puts(&#x27;\nCreating basic app structure&#x27;)
+  require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(projectName, options)
+)
+
+.on(&#x27;--help&#x27;, -&#x3e;
+  puts &#x27;Scaffold out common files like .jshintrc, smart.json, and a makefile&#x27;
+  puts &#x27;&#x27;
+  puts &#x27;  Example:&#x27;
+  puts &#x27;  $ mgen create mybook&#x27;
 ...</pre></li>
     </ul>
 
@@ -491,21 +493,21 @@ init: function(projectName) {
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-initSource: templatePath + &#x27;init/&#x27;,
 
-// Public: Copy the boilerplate in the templates init folder to
-// the user&#x27;s root project folder. Creates a router and client
-// folder. The project name is used for removing original boilerplate.
-//
-// Examples:
-// require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(&#x27;myProjectName&#x27;);
-//
-// projectName - the {String} name of the user&#x27;s meteor project
-//
-init: function(projectName) {
-  var self = this;
-  this.projectName = projectName;
-  this.projDir = &#x27;./&#x27; + projectName + &#x27;/&#x27;;
+# Create Command
+prog.command(&#x27;create &#x3c;projectName&#x3e;&#x27;)
+.description(&#x27;Create a basic running app with a router.&#x27;)
+
+.action((projectName, options) -&#x3e;
+  puts(&#x27;\nCreating basic app structure&#x27;)
+  require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(projectName, options)
+)
+
+.on(&#x27;--help&#x27;, -&#x3e;
+  puts &#x27;Scaffold out common files like .jshintrc, smart.json, and a makefile&#x27;
+  puts &#x27;&#x27;
+  puts &#x27;  Example:&#x27;
+  puts &#x27;  $ mgen create mybook&#x27;
 ...</pre></li>
     </ul>
 
@@ -854,20 +856,22 @@ this.<span class="apidocCodeKeywordSpan">_runTerminalCommand</span>(&#x27;meteor
 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  console.log(&#x27;    Created: &#x27; + this.contrFile);
-}
+.option(&#x22;-d, --directory &#x3c;path&#x3e;&#x22;, &#x22;Change the default component directory &#x27;client/pages&#x27;&#x22
+;, &#x22;client/pages/&#x22;)
+.option(&#x22;-i, --index&#x22;, &#x22;Only create an &#x27;index&#x27; page&#x22;)
+.option(&#x22;-s, --show&#x22;,  &#x22;Only create a &#x27;show&#x27; page&#x22;)
+.option(&#x22;-n, --new&#x22;,   &#x22;Only create a &#x27;new&#x27; page&#x22;)
+.option(&#x22;-e, --edit&#x22;,  &#x22;Only create an &#x27;edit&#x27; page&#x22;)
 
-// Append Iron Router Controllers
+.action((pageName, options) -&#x3e;
+  require(&#x27;./page&#x27;).<span class="apidocCodeKeywordSpan">run</span>(pageName, options)
+  puts(&#x27;Creating Pages&#x27;)
+)
 
-if (opts.index || opts.all) {
-  this._appendController(&#x27;index&#x27;);
-  require(&#x27;./page&#x27;).<span class="apidocCodeKeywordSpan">run</span>(this.resName, {index: true});
-}
-
-if (opts.new || opts.all) {
-  this._appendController(&#x27;new&#x27;);
-  require(&#x27;./page&#x27;).run(resName, {&#x27;new&#x27;: true});
-}
+.on(&#x27;--help&#x27;, -&#x3e;
+  puts &#x27;  Create a page boilerplate folder including a HTML template, JS, &#x26; Sass file.&#x27;
+  puts &#x22;  By default all crud actions will be generated, e.g., new.js, show.js, edit.js, index.js&#x22;
+  puts &#x22;  Pass --show flag to only generate show.js, show.html, etc..&#x22;
 ...</pre></li>
     </ul>
 
